@@ -28,7 +28,7 @@ abstract class Product {
         return price;
     }
 
-    public double getStock() {
+    public int getStock() {
         return stock;
     }
 
@@ -47,10 +47,10 @@ abstract class Product {
 
 
     //abstact method "calculateDiscount"
-    abstract public double calculateDiscount(double price);
+    abstract public double calculateDiscount();
 
     public double finalPrice() {
-        return (getPrice() - calculateDiscount(price));
+        return (getPrice() - calculateDiscount());
     }
 }
 
@@ -61,7 +61,7 @@ class ElectronicsProduct extends Product {
     }
 
     @Override
-    public double calculateDiscount(double price) {
+    public double calculateDiscount() {
         return (getPrice() * 10/100);
     }
     
@@ -74,7 +74,7 @@ class ClothingProduct extends Product {
     }
 
     @Override
-    public double calculateDiscount(double price) {
+    public double calculateDiscount() {
         return (getPrice() * 20/100);
     }
     
@@ -97,7 +97,7 @@ class FoodProduct extends Product {
     }
 
     @Override
-    public double calculateDiscount(double price) {
+    public double calculateDiscount() {
         return (getPrice() * 5/100);
     }
 }
@@ -107,13 +107,13 @@ class Main {
         Product[] products = {
             new ElectronicsProduct("Mixer", 5000, 2),
             new ClothingProduct("T-shirts", 1600, 10),
-            new FoodProduct("Pizza", 100, 1, 02/02/2003)
+            new FoodProduct("Pizza", 100, 1, 02022003)
         };
 
         for(Product p : products) {
             System.out.println("Product: " + p.getName());
             System.out.println("Price: " + p.getPrice());
-            System.out.println("Discount: " + p.calculateDiscount(2000));
+            System.out.println("Discount: " + p.calculateDiscount());
             System.out.println("Final Price: " + p.finalPrice());
             System.out.println("----------------");
         }
