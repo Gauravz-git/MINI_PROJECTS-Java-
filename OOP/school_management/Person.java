@@ -1,4 +1,4 @@
-package school_management;
+package OOP.vehicle_garage.school_management;
 
 /**
  * Person

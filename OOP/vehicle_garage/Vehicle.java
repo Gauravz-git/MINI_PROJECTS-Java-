@@ -1,4 +1,4 @@
-package vehicle_garage;
+package OOP.vehicle_garage;
 class Vehicle {
     private String brand;
     private int speed;
