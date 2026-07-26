@@ -9,7 +9,7 @@ public class ReverseNumber {
         int num = sc.nextInt();
 
         //logic
-        int reversedNumber = 0;
+        int reversedNumber = 0; 
 
         while(num != 0) {
             int lastDigit = num % 10;  //fetch the last digit of number.
